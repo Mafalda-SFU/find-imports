@@ -7,7 +7,7 @@
   "module": "dist/index.mjs",
   "scripts": {
     "tscheck":"tsc -p . --noEmit",
-    "prepublishOnly": "rimraf dist && rollup -c rollup.config.ts",
+    "prepare": "rimraf dist && rollup -c rollup.config.mjs",
     "eslint": "eslint *.js",
     "test": "tap --node-arg=--loader=ts-node/esm --node-arg=--no-warnings --node-arg=--experimental-specifier-resolution=node  \"tests/**/*.spec.ts\""
   },

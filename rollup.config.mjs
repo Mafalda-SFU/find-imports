@@ -4,8 +4,6 @@ import typescript from "rollup-plugin-typescript2";
 import json from "@rollup/plugin-json";
 import autoExternal from 'rollup-plugin-auto-external';
 
-const pkg = require("./package.json");
-
 const plugins = [
   autoExternal(),
   // Allow json resolution
@@ -21,7 +19,7 @@ const plugins = [
       "rootDir": "src",
       "declaration": true,
     },
-    exclude:['tests','rollup.config.ts']
+    exclude:['tests','rollup.config.mjs']
   }}),
   // Resolve source maps to the original source
   // sourceMaps(),
@@ -32,11 +30,11 @@ export default [
     input: `src/index.ts`,
     output: [
       {
-        file: pkg.main,
+        file: "dist/index.js",
         format: "cjs",
         sourcemap: false,
       },
-      { file: pkg.module, format: "es", sourcemap: false },
+      { file: "dist/index.mjs", format: "es", sourcemap: false },
     ],
     // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
     external: [],
