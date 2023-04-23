@@ -161,6 +161,15 @@ export async function findImports(
             node.source.value
           );
           return;
+        } else if (node.type === "ExportNamedDeclaration") {
+          addModule(
+            requiredModules as Record<string, string[]>,
+            _options,
+            modulePath,
+            // @ts-ignore
+            node.source.value
+          );
+          return;
         }
       });
     } catch (e) {
