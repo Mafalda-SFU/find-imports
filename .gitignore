@@ -1,6 +1,7 @@
-node_modules
-/.nyc_output
-.idea
-yarn.lock
-package-lock.json
+.nyc_output/
+node_modules/
 dist/
+*.tgz
+.idea
+package-lock.json
+yarn.lock

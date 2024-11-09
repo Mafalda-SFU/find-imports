@@ -1,1 +1,7 @@
-/.nyc_output
+.github/
+.nyc_output/
+src/
+tests/
+*.tgz
+rollup.config.mjs
+tsconfig.json
